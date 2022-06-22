@@ -6,5 +6,5 @@
     <p><%= portfolio_item.body %></p>
     <p><%= image_tag portfolio_item.thumb_image if !portfolio_item.thumb_image.nil? %></p>
     <%= button_to "Edit", edit_portfolio_path(portfolio_item.id) %> <!--Edit by id-->
-    <%= button_to "Destroy this Item", portfolio_path(portfolio_item), method: :delete %>
+    <%= button_to "Destroy this Item", portfolio_path(portfolio_item), method: :destroy %>
 <% end %> 
