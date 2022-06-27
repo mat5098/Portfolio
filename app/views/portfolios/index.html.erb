@@ -1,10 +1,10 @@
 <h1>Portfolio Items</h1>
-<%= button_to"Create new item", new_portfolio_path %> <!-- = <a href="portfolios/new">Create New Item</a>-->
+<%= button_to"Create new item", new_portfolio_path, method: :get %> <!-- = <a href="portfolios/new">Create New Item</a>-->
 <% @portfolio_item.each do |portfolio_item| %>
     <h2><%= link_to portfolio_item.title, portfolio_show_path(portfolio_item.id)%></h2>
     <p><%= portfolio_item.subtitle %></p>
     <p><%= portfolio_item.body %></p>
     <p><%= image_tag portfolio_item.thumb_image if !portfolio_item.thumb_image.nil? %></p>
-    <%= button_to "Edit", edit_portfolio_path(portfolio_item.id) %> <!--Edit by id-->
-    <%= button_to "Destroy this Item", portfolio_path(portfolio_item), method: :destroy %>
+    <%= button_to "Edit", edit_portfolio_path(portfolio_item.id), method: :get %> <!--Edit by id-->
+    <%= button_to "Destroy this Item", portfolio_path(portfolio_item), method: :delete %>
 <% end %> 
