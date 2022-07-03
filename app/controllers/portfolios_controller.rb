@@ -2,6 +2,10 @@ class PortfoliosController < ApplicationController
     def index
         @portfolio_item = Portfolio.all
     end
+    
+    def django
+      @django_portfolio_item = Portfolio.django
+    end
 
     def new
         @portfolio_item = Portfolio.new
